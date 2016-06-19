@@ -1,0 +1,46 @@
+
+Using ASIHTTPRequest in an iOS project
+1) Add the files
+
+Copy the files you need to your project folder, and add them to your Xcode project. An overview of the ASIHTTPRequest source files appears here.
+
+If you aren't sure which files you need, it's best to copy all the following files:
+
+    ASIHTTPRequestConfig.h
+    ASIHTTPRequestDelegate.h
+    ASIProgressDelegate.h
+    ASICacheDelegate.h
+    ASIHTTPRequest.h
+    ASIHTTPRequest.m
+    ASIDataCompressor.h
+    ASIDataCompressor.m
+    ASIDataDecompressor.h
+    ASIDataDecompressor.m
+    ASIFormDataRequest.h
+    ASIInputStream.h
+    ASIInputStream.m
+    ASIFormDataRequest.m
+    ASINetworkQueue.h
+    ASINetworkQueue.m
+    ASIDownloadCache.h
+    ASIDownloadCache.m
+
+iPhone projects must also include:
+
+    ASIAuthenticationDialog.h
+    ASIAuthenticationDialog.m
+    Reachability.h (in the External/Reachability folder)
+    Reachability.m (in the External/Reachability folder)
+
+2) Link with CFNetwork, SystemConfiguration, MobileCoreServices, CoreGraphics and zlib
+
+Open the settings for your target by clicking on the blue bar at the very top of the Xcode sidebar:
+
+
+Open the Build Phases tab, expand the box labeled Link Binary With Libraries then click the plus button.
+
+
+Choose CFNetwork.framework from the list, and click Add:
+
+
+Repeat the last two steps to add the following: SystemConfiguration.framework, MobileCoreServices.framework, CoreGraphics.framework and libz.dylib.

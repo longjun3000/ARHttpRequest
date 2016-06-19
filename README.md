@@ -29,7 +29,7 @@ ARHttpRequest现有的功能：
 
 6、iOS现提供NSURLSession和ASIHTTPRequest的适配器；Android现提供HttpURLConnection的适配器。
 
-![image](https://raw.githubusercontent.com/longjun3000/ARLineChart/master/Screenshot01.png)
+![image](https://raw.githubusercontent.com/longjun3000/ARHttpRequest/master/Screenshot01.png)
 
 
 如何使用？

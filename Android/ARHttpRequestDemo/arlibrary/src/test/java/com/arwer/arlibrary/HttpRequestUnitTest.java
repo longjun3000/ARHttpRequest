@@ -24,7 +24,10 @@ public class HttpRequestUnitTest {
     private IHttpRequest mHttpRequest;
     public IHttpRequest getHttpRequest() {
         if (mHttpRequest == null) {
+            // 创建一个基于HttpURLConnection的适配器
             mHttpRequest = new HttpRequest();
+            // 创建一个基于XXXX的适配器
+            // ...
         }
         return mHttpRequest;
     }
@@ -54,7 +57,7 @@ public class HttpRequestUnitTest {
 
     // 测试POST JSON
     @Test
-    public void testPostJSON() {
+    public void testPostJson() {
         try {
             String urlString = "http://localhost:3000/dev/mock/api/48e82320-efff-11e5-b524-8fc3522b1799/checkVersion";
             getHttpRequest().postJson(urlString, 1, "{\"aaa\":\"111\"}", null, 1000*10, new IHttpCallback() {

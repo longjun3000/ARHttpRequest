@@ -89,7 +89,62 @@ framework形式引入：
 
 Android
 -------
-敬请期待...
+```
+    private IHttpRequest mHttpRequest;
+    public IHttpRequest getHttpRequest() {
+        if (mHttpRequest == null) {
+            // 创建一个基于HttpURLConnection的适配器
+            mHttpRequest = new HttpRequest();
+            // 创建一个基于XXXX的适配器
+            // ...
+        }
+        return mHttpRequest;
+    }
+
+    // 测试GET
+    public void testGet() {
+        try {
+
+            String urlString = "http://www.baidu.com";
+            getHttpRequest().get(urlString, 0, 1000*15, new IHttpCallback() {
+                @Override
+                public void onFinished(String respString) {
+                    System.out.println(respString);
+                }
+
+                @Override
+                public void onFailure(String errMsg) {
+                    System.out.println(errMsg);
+                }
+            });
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 测试POST JSON
+    public void testPostJson() {
+        try {
+            String urlString = "http://192.168.1.100:3000/dev/mock/api/48e82320-efff-11e5-b524-8fc3522b1799/checkVersion";
+            getHttpRequest().postJson(urlString, 1, "{\"aaa\":\"111\"}", null, 1000*10, new IHttpCallback() {
+                @Override
+                public void onFinished(String respString) {
+                    System.out.println(respString);
+                }
+
+                @Override
+                public void onFailure(String errMsg) {
+                    System.out.println(errMsg);
+                }
+            });
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+```
 
 
 联系方式

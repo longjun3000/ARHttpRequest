@@ -85,7 +85,7 @@ framework形式引入：
      ];
 ```
 
-注：更多例子请参考源码“iOS/ARHttpRequestDemo”工程下的单元测试例子“ARHttpRequestTests.m”。
+注：更多iOS范例请参考源码“iOS/ARHttpRequestDemo”工程下的单元测试例子“ARHttpRequestTests.m”。
 
 Android
 -------
@@ -145,6 +145,7 @@ Android
         }
     }
 ```
+注：更多Android范例请参看app项目下的单元测试“HttpRequestAppTest.java”，或者arlibrary模块下的“HttpRequestUnitTest.java”。
 
 
 联系方式

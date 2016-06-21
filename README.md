@@ -1,9 +1,8 @@
 ARHttpRequest
 ===========
 
-ARHttpRequest是一个网络通信的适配层，对上层业务调用提供简明接口，对下层具体网络库轻度包装，并以适配器模式进行扩展和无缝替换。
-  
-  
+ARHttpRequest是一个网络通信的适配层，对上层业务调用提供简明接口，对下层具体网络库轻度包装，并以适配器模式进行扩展和无缝替换。  
+<br/><br/>
 ARHttpRequest产生背景和特点：
 
 1、旧业务系统的维护和升级：适配器模式的设计，保持上层业务代码的不变或少变，而下层具体网络库可以与时俱进和无缝更换。
@@ -12,14 +11,13 @@ ARHttpRequest产生背景和特点：
 
 3、多平台规范的考虑：Android和iOS设计相对统一的适配接口规范，便于管理和维护。
 
-4、ARHttpRequest目的是为解决日常80%的繁琐使用场景；另外20%复杂或特殊的场景请直接使用具体网络库的特定方式来操作。
-  
-  
+4、ARHttpRequest目的是为解决日常80%的繁琐使用场景；另外20%复杂或特殊的场景请直接使用具体网络库的特定方式来操作。  
+<br/><br/>
 ARHttpRequest现有的功能：
 
-1、提供简明的网络操作API，包括get/post/postJson/postXml/postSoapXml/postFormData/downloadFile/uploadFile等。
+1、提供简明的网络操作API，包括get / post / postJson / postXml / postSoapXml / postFormData / downloadFile / uploadFile等。
 
-2、DownloadFile支持断点续传。
+2、downloadFile支持断点续传。
 
 3、默认网络操作都为异步方式，提供完成/失败的回调Block，下载有进度状态Block。
 

@@ -94,7 +94,7 @@ Android
     public IHttpRequest getHttpRequest() {
         if (mHttpRequest == null) {
             // 创建一个基于HttpURLConnection的适配器
-            mHttpRequest = new HttpRequest();
+            mHttpRequest = new URLConnectionAdapter();
             // 创建一个基于XXXX的适配器
             // ...
         }

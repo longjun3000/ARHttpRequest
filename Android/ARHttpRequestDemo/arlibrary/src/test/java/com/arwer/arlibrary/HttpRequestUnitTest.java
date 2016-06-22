@@ -3,7 +3,7 @@ package com.arwer.arlibrary;
 import com.arwer.arlibrary.net.common.IHttpCallback;
 import com.arwer.arlibrary.net.common.IHttpRequest;
 import com.arwer.arlibrary.net.common.IProgressCallback;
-import com.arwer.arlibrary.net.urlconnection.HttpRequest;
+import com.arwer.arlibrary.net.urlconnection.URLConnectionAdapter;
 import com.arwer.arlibrary.threads.TaskQueue;
 
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class HttpRequestUnitTest {
     public IHttpRequest getHttpRequest() {
         if (mHttpRequest == null) {
             // 创建一个基于HttpURLConnection的适配器
-            mHttpRequest = new HttpRequest();
+            mHttpRequest = new URLConnectionAdapter();
             // 创建一个基于XXXX的适配器
             // ...
         }

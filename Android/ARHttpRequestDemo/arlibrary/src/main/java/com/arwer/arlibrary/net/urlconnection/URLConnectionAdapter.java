@@ -23,7 +23,7 @@ import java.util.concurrent.Callable;
 
 
 /**
- * @file HttpRequest.java
+ * @file URLConnectionAdapter.java
  * @brief 实现基于HttpURLConnection的适配器
  * @details https://github.com/longjun3000/ARHttpRequest
  * @version v1.0
@@ -36,18 +36,12 @@ import java.util.concurrent.Callable;
  * @author 修改人的名字及单位
  *
  */
-public class HttpRequest implements IHttpRequest {
+public class URLConnectionAdapter implements IHttpRequest {
 
     ////////////////////////////////////////////////////////////////
     // 常量、变量定义
     ////////////////////////////////////////////////////////////////
 
-    //    /** 标签，标记 */
-//    public int tag;
-    //
-//    private String mUrlString = null;
-    //
-//    private HttpURLConnection mConnection = null;
     // 是否取消请求
     private boolean mIsCancel = false;
     //
@@ -66,9 +60,9 @@ public class HttpRequest implements IHttpRequest {
     // 生命周期相关函数
     ////////////////////////////////////////////////////////////////
 
-//    private HttpRequest() {};
+//    private URLConnectionAdapter() {};
 
-//    public HttpRequest(String urlString) throws Exception {
+//    public URLConnectionAdapter(String urlString) throws Exception {
 //        if (urlString == null || urlString.length() < 1) {
 //            throw new Exception("param \"urlString\"不能为空");
 //        }

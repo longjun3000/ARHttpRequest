@@ -48,10 +48,10 @@
 - (id<IARHttpRequest>)httpRequest
 {
     if (!_httpRequest) {
-        // 测试基于NSURLSession的操作
+        // 创建基于NSURLSession的适配器
         _httpRequest = [[ARHttpRequestSessionAdapter alloc] init];
         
-//        // 测试基于ASIHTTPRequest的操作
+//        // 创建基于ASIHTTPRequest的适配器
 //        _httpRequest = [[ARHttpRequestASIAdapter alloc] init];
     }
     return _httpRequest;

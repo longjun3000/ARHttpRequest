@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF19076B1D1D15A700622BA5 /* ARHttpRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */; };
+		BF19076D1D1D15CE00622BA5 /* ARHttpRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF378F141D1144BF00AA8DC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F131D1144BF00AA8DC3 /* main.m */; };
 		BF378F171D1144BF00AA8DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F161D1144BF00AA8DC3 /* AppDelegate.m */; };
 		BF378F1A1D1144BF00AA8DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F191D1144BF00AA8DC3 /* ViewController.m */; };
@@ -16,8 +18,6 @@
 		BF378F2D1D1144C000AA8DC3 /* ARHttpRequestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F2C1D1144C000AA8DC3 /* ARHttpRequestDemoTests.m */; };
 		BF378F381D1144C000AA8DC3 /* ARHttpRequestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F371D1144C000AA8DC3 /* ARHttpRequestDemoUITests.m */; };
 		BF4BDB4E1D1283FB0094F305 /* ARHttpRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4BDB4D1D1283FB0094F305 /* ARHttpRequestTests.m */; };
-		BF4BDB501D12A9F60094F305 /* ARHttpRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4BDB4F1D12A9F60094F305 /* ARHttpRequest.framework */; };
-		BF4BDB531D12AB140094F305 /* ARHttpRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4BDB521D12AB140094F305 /* ARHttpRequest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BF19076C1D1D15BF00622BA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF19076D1D1D15CE00622BA5 /* ARHttpRequest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARHttpRequest.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ARHttpRequest-dvvdbrgwlfjumqcfdojwpbzctsgf/Build/Products/Debug-iphoneos/ARHttpRequest.framework"; sourceTree = "<group>"; };
 		BF378F0F1D1144BF00AA8DC3 /* ARHttpRequestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARHttpRequestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF378F131D1144BF00AA8DC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF378F151D1144BF00AA8DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +69,6 @@
 		BF378F371D1144C000AA8DC3 /* ARHttpRequestDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARHttpRequestDemoUITests.m; sourceTree = "<group>"; };
 		BF378F391D1144C000AA8DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4BDB4D1D1283FB0094F305 /* ARHttpRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARHttpRequestTests.m; sourceTree = "<group>"; };
-		BF4BDB4F1D12A9F60094F305 /* ARHttpRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARHttpRequest.framework; path = "../ARHttpRequest/build/Debug-iphoneos/ARHttpRequest.framework"; sourceTree = "<group>"; };
-		BF4BDB521D12AB140094F305 /* ARHttpRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARHttpRequest.framework; path = "../ARHttpRequest/build/Debug-iphoneos/ARHttpRequest.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF4BDB501D12A9F60094F305 /* ARHttpRequest.framework in Frameworks */,
+				BF19076B1D1D15A700622BA5 /* ARHttpRequest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF4BDB531D12AB140094F305 /* ARHttpRequest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +164,7 @@
 		BF4BDB511D12AA020094F305 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF4BDB521D12AB140094F305 /* ARHttpRequest.framework */,
-				BF4BDB4F1D12A9F60094F305 /* ARHttpRequest.framework */,
+				BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +179,7 @@
 				BF378F0B1D1144BF00AA8DC3 /* Sources */,
 				BF378F0C1D1144BF00AA8DC3 /* Frameworks */,
 				BF378F0D1D1144BF00AA8DC3 /* Resources */,
+				BF19076C1D1D15BF00622BA5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -226,6 +237,7 @@
 				TargetAttributes = {
 					BF378F0E1D1144BF00AA8DC3 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = K56Y76AFQU;
 					};
 					BF378F271D1144BF00AA8DC3 = {
 						CreatedOnToolsVersion = 7.2;
@@ -433,11 +445,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ARHttpRequestDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arwer.ARHttpRequestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -445,11 +460,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ARHttpRequestDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arwer.ARHttpRequestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -65,7 +65,7 @@
     XCTestExpectation *exception = [self expectationWithDescription:@""];
     
     //    NSString *url = @"http://localhost:3000/dev/mock/api/48e82320-efff-11e5-b524-8fc3522b1799/checkVersion";
-    //    NSString *url = @"http://www.baidu.com";
+//        NSString *url = @"http://www.baidu.com";
 //    NSString *url = @"http://localhost:3000/dev/mock/api/48e82320-efff-11e5-b524-8fc3522b1799/checkVersionFail";
     NSString *url = @"http://www.baidu.com/s?wd=学习 笔记";
     

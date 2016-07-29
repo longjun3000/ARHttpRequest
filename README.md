@@ -27,6 +27,35 @@ ARHttpRequest现有的功能：
 
 6、iOS现提供NSURLSession和ASIHTTPRequest的适配器；Android现提供HttpURLConnection的适配器。
 
+<br><br>
+ARHttpRequest is a network communication adapter layer, the upper business calls provide concise interface, to the lower concrete network library mild package, and take the adapter pattern extensions and seamless replacement.
+
+ARHttpRequest background and characteristics:
+
+1. maintenance and upgrade of the old system: design of the adapter pattern, keeping the same upper-level business code or less, specific network libraries can be seamlessly replaced advancing with the times and lower.
+
+2. the actual project development iteration: day-to-day development needs simple, neat network API,IHttpRequest interface is evolved from years of practical project needs to be abstract.
+
+3. multi-platform standard consider: Android and iOS design integrated adapter interface specification, easy to manage and maintain.
+
+4. ARHttpRequest aims to address complex usage scenarios of daily 80% and another 20% complex or specific scenario please use specific network library is specific to operations.
+
+
+ARHttpRequest existing features:
+
+1. the API provides simple network operations, including get/post/postJson/postXml/postSoapXml/postFormData/downloadFile/uploadFile, etc.
+
+2. downloadFile supports resuming.
+
+3. default network operation is asynchronous, providing completed/failed callback Block, download progress status Block.
+
+4. provide a simple way to queue operations, as well as the queue completion callback Block.
+
+5. ARHttpRequest automatically when the instance class destructor to release references and cleanup of related objects, the upper memory release problem code without concern for network libraries.
+
+6. iOS is available NSURLSession and ASIHTTPRequest adapter; adapters that Android is now providing a HttpURLConnection.
+
+
 ![image](https://raw.githubusercontent.com/longjun3000/ARHttpRequest/master/Screenshot_Android.png)
 
 

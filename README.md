@@ -1,33 +1,5 @@
 ARHttpRequest
 ===========
-
-ARHttpRequest是一个网络通信的适配层，对上层业务调用提供简明接口，对下层具体网络库轻度包装，并以适配器模式进行扩展和无缝替换。  
-<br/><br/>
-ARHttpRequest产生背景和特点：
-
-1、旧业务系统的维护和升级：适配器模式的设计，保持上层业务代码的不变或少变，而下层具体网络库可以与时俱进和无缝更换。
-
-2、实际项目开发的迭代：日常开发需要简单、简洁的网络操作API，IHttpRequest接口正是由多年实际项目需要抽象进化而来。
-
-3、多平台规范的考虑：Android和iOS设计相对统一的适配接口规范，便于管理和维护。
-
-4、ARHttpRequest目的是为解决日常80%的繁琐使用场景；另外20%复杂或特殊的场景请直接使用具体网络库的特定方式来操作。  
-<br/><br/>
-ARHttpRequest现有的功能：
-
-1、提供简明的网络操作API，包括get / post / postJson / postXml / postSoapXml / postFormData / downloadFile / uploadFile等。
-
-2、downloadFile支持断点续传。
-
-3、默认网络操作都为异步方式，提供完成/失败的回调Block，下载有进度状态Block。
-
-4、提供简洁的队列操作方式，以及队列完成的回调Block。
-
-5、ARHttpRequest实例类析构时自动释放和清理相关对象的引用，上层代码无需关注具体网络库的内存释放问题。
-
-6、iOS现提供NSURLSession和ASIHTTPRequest的适配器；Android现提供HttpURLConnection的适配器。
-
-<br><br>
 ARHttpRequest is a network communication adapter layer, the upper business calls provide concise interface, to the lower concrete network library mild package, and take the adapter pattern extensions and seamless replacement.
 
 ARHttpRequest background and characteristics:
@@ -54,6 +26,33 @@ ARHttpRequest existing features:
 5. ARHttpRequest automatically when the instance class destructor to release references and cleanup of related objects, the upper memory release problem code without concern for network libraries.
 
 6. iOS is available NSURLSession and ASIHTTPRequest adapter; adapters that Android is now providing a HttpURLConnection.
+
+<br><br>
+ARHttpRequest是一个网络通信的适配层，对上层业务调用提供简明接口，对下层具体网络库轻度包装，并以适配器模式进行扩展和无缝替换。  
+<br/><br/>
+ARHttpRequest产生背景和特点：
+
+1、旧业务系统的维护和升级：适配器模式的设计，保持上层业务代码的不变或少变，而下层具体网络库可以与时俱进和无缝更换。
+
+2、实际项目开发的迭代：日常开发需要简单、简洁的网络操作API，IHttpRequest接口正是由多年实际项目需要抽象进化而来。
+
+3、多平台规范的考虑：Android和iOS设计相对统一的适配接口规范，便于管理和维护。
+
+4、ARHttpRequest目的是为解决日常80%的繁琐使用场景；另外20%复杂或特殊的场景请直接使用具体网络库的特定方式来操作。  
+<br/><br/>
+ARHttpRequest现有的功能：
+
+1、提供简明的网络操作API，包括get / post / postJson / postXml / postSoapXml / postFormData / downloadFile / uploadFile等。
+
+2、downloadFile支持断点续传。
+
+3、默认网络操作都为异步方式，提供完成/失败的回调Block，下载有进度状态Block。
+
+4、提供简洁的队列操作方式，以及队列完成的回调Block。
+
+5、ARHttpRequest实例类析构时自动释放和清理相关对象的引用，上层代码无需关注具体网络库的内存释放问题。
+
+6、iOS现提供NSURLSession和ASIHTTPRequest的适配器；Android现提供HttpURLConnection的适配器。
 
 
 ![image](https://raw.githubusercontent.com/longjun3000/ARHttpRequest/master/Screenshot_Android.png)

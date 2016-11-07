@@ -5,7 +5,7 @@ import com.arwer.arlibrary.net.common.IHttpCallback;
 import com.arwer.arlibrary.net.common.IHttpRequest;
 import com.arwer.arlibrary.net.common.IProgressCallback;
 import com.arwer.arlibrary.threads.TaskQueue;
-import com.arwer.arlibrary.utils.IOUtils;
+import com.arwer.arlibrary.utils.IOUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -26,14 +26,14 @@ import java.util.concurrent.Callable;
  * @file URLConnectionAdapter.java
  * @brief 实现基于HttpURLConnection的适配器
  * @details https://github.com/longjun3000/ARHttpRequest
- * @version v1.0
+ * @version v1.1
  * @author 创建人：LongJun
  * @date 创建日期：2016-02-20
  * @copyright Copyright (c) 2016 ArwerSoftware All rights reserved.
  *
- * @date 修改日期，例：xxxx年x月xx日
- * @details 修改历史记录：详细说明修改的内容。
- * @author 修改人的名字及单位
+ * @date 2016-10-18
+ * @details 支持客户端请求持有服务端Session信息
+ * @author LongJun
  *
  */
 public class URLConnectionAdapter implements IHttpRequest {
@@ -55,6 +55,8 @@ public class URLConnectionAdapter implements IHttpRequest {
         }
         return mDefaultQueue;
     }
+    // Cookie
+    private String mCookie;
 
     ////////////////////////////////////////////////////////////////
     // 生命周期相关函数
@@ -251,6 +253,10 @@ public class URLConnectionAdapter implements IHttpRequest {
                 connection.setRequestMethod("GET");
                 connection.setReadTimeout(mTimeoutMillis); //设置从主机读取数据超时（单位：毫秒）
                 connection.setConnectTimeout(mTimeoutMillis); //设置连接主机超时（单位：毫秒）
+                // 设置Cookie
+                if(mCookie!=null && mCookie.length()>0){
+                    connection.setRequestProperty("Cookie", mCookie);
+                }
 
                 // 发送请求
                 connection.connect(); //和远程资源建立真正的连接，但尚无返回的数据流
@@ -269,6 +275,9 @@ public class URLConnectionAdapter implements IHttpRequest {
 
                 String resultStr = new String(os.toByteArray());
 //                System.out.print(resultStr);
+                // 获得服务端返回的set-cookie信息(包括sessionid)
+                mCookie = connection.getHeaderField("set-cookie");
+
                 mCallback.onFinished(resultStr);
 
                 return resultStr;
@@ -595,6 +604,10 @@ public class URLConnectionAdapter implements IHttpRequest {
                 connection.setDoInput(true); // 发送POST请求必须设置允许输入 //setDoInput的默认值就是true
                 // Post 请求不能使用缓存
                 connection.setUseCaches(false);
+                // 设置Cookie
+                if(mCookie!=null && mCookie.length()>0){
+                    connection.setRequestProperty("Cookie", mCookie);
+                }
                 //
                 connection.connect(); //和远程资源建立真正的连接，但尚无返回的数据流
                 // 此处getOutputStream会隐含的进行connect (即：如同调用上面的connect()方法，
@@ -631,6 +644,9 @@ public class URLConnectionAdapter implements IHttpRequest {
                 baos.close();
                 // 返回字符串
                 final String resultStr = new String(baos.toByteArray());
+                // 获得服务端返回的set-cookie信息(包括sessionid)
+                mCookie = connection.getHeaderField("set-cookie");
+//                System.out.println("cookie: " + mCookie);
                 //
                 callback.onFinished(resultStr);
                 //
@@ -936,6 +952,11 @@ public class URLConnectionAdapter implements IHttpRequest {
                 // 设置下载区间
                 connection.setRequestProperty("RANGE", "bytes=" + downSize + "-");
 
+                // 设置Cookie
+                if(mCookie!=null && mCookie.length()>0){
+                    connection.setRequestProperty("Cookie", mCookie);
+                }
+
                 //
                 connection.connect(); //和远程资源建立真正的连接，但尚无返回的数据流
 
@@ -976,11 +997,11 @@ public class URLConnectionAdapter implements IHttpRequest {
                     is.close(); // 释放资源
 
                     // 获得下载文件原始文件名，
-                    String originalFileName = IOUtils.getFileName(connection.getURL().getFile());
+                    String originalFileName = IOUtil.getFileName(connection.getURL().getFile());
                     // 包含原始文件名的本地下载文件的最终路径
-                    String destFile = IOUtils.addFilePathComponent(destinationPath, URLDecoder.decode(originalFileName,"UTF-8"));
+                    String destFile = IOUtil.addFilePathComponent(destinationPath, URLDecoder.decode(originalFileName,"UTF-8"));
                     // 移动临时文件到目的文件
-                    if (IOUtils.rename(tempPath, destFile) ) {
+                    if (IOUtil.rename(tempPath, destFile) ) {
                         // 完成下载，返回参数为目标文件路径
                         progressCallback.onFinished(destFile);
                         //
@@ -1000,11 +1021,11 @@ public class URLConnectionAdapter implements IHttpRequest {
                     String sizeStr = getFileSizeFromHead(connection);
                     if (sizeStr.equals(String.valueOf(downSize)) ) { //临时文件和服务器文件一样大
                         // 获得下载文件原始文件名，
-                        String originalFileName = IOUtils.getFileName(connection.getURL().getFile());
+                        String originalFileName = IOUtil.getFileName(connection.getURL().getFile());
                         // 包含原始文件名的本地下载文件的最终路径
-                        String destFile = IOUtils.addFilePathComponent(destinationPath, originalFileName);
+                        String destFile = IOUtil.addFilePathComponent(destinationPath, originalFileName);
                         // 移动临时文件到目的文件
-                        if (IOUtils.rename(tempPath, destFile) ) {
+                        if (IOUtil.rename(tempPath, destFile) ) {
                             // 完成下载，返回参数为目标文件路径
                             progressCallback.onFinished(destFile);
                             //
@@ -1032,6 +1053,8 @@ public class URLConnectionAdapter implements IHttpRequest {
                 progressCallback.onFailure(e.getMessage());
             }
             finally {
+                // 获得服务端返回的set-cookie信息(包括sessionid)
+                mCookie = connection.getHeaderField("set-cookie");
                 connection.disconnect();
             }
             return null;
@@ -1130,11 +1153,11 @@ public class URLConnectionAdapter implements IHttpRequest {
 //                is.close(); // 释放资源
 //
 //                // 获得下载文件原始文件名，
-//                String originalFileName = IOUtils.getFileName(connection.getURL().getFile());
+//                String originalFileName = IOUtil.getFileName(connection.getURL().getFile());
 //                // 包含原始文件名的本地下载文件的最终路径
-//                String destFile = IOUtils.addFilePathComponent(destinationPath, URLDecoder.decode(originalFileName,"UTF-8"));
+//                String destFile = IOUtil.addFilePathComponent(destinationPath, URLDecoder.decode(originalFileName,"UTF-8"));
 //                // 移动临时文件到目的文件
-//                if (IOUtils.rename(tempPath, destFile) ) {
+//                if (IOUtil.rename(tempPath, destFile) ) {
 //                    // 完成下载，返回参数为目标文件路径
 //                    progressCallback.onFinished(destFile);
 //                }
@@ -1151,11 +1174,11 @@ public class URLConnectionAdapter implements IHttpRequest {
 //                String sizeStr = getFileSizeFromHead(connection);
 //                if (sizeStr.equals(String.valueOf(downSize)) ) { //临时文件和服务器文件一样大
 //                    // 获得下载文件原始文件名，
-//                    String originalFileName = IOUtils.getFileName(connection.getURL().getFile());
+//                    String originalFileName = IOUtil.getFileName(connection.getURL().getFile());
 //                    // 包含原始文件名的本地下载文件的最终路径
-//                    String destFile = IOUtils.addFilePathComponent(destinationPath, originalFileName);
+//                    String destFile = IOUtil.addFilePathComponent(destinationPath, originalFileName);
 //                    // 移动临时文件到目的文件
-//                    if (IOUtils.rename(tempPath, destFile) ) {
+//                    if (IOUtil.rename(tempPath, destFile) ) {
 //                        // 完成下载，返回参数为目标文件路径
 //                        progressCallback.onFinished(destFile);
 //                    }
@@ -1276,6 +1299,10 @@ public class URLConnectionAdapter implements IHttpRequest {
                 connection.setDoOutput(true); // 发送POST请求必须设置允许输出
                 connection.setDoInput(true); // 发送POST请求必须设置允许输入 //setDoInput的默认值就是true
                 connection.setUseCaches(false);
+                // 设置Cookie
+                if(mCookie!=null && mCookie.length()>0){
+                    connection.setRequestProperty("Cookie", mCookie);
+                }
                 //
                 connection.connect(); //和远程资源建立真正的连接，但尚无返回的数据流
 
@@ -1349,6 +1376,8 @@ public class URLConnectionAdapter implements IHttpRequest {
                 // 释放资源
                 is.close();
                 baos.close();
+                // 获得服务端返回的set-cookie信息(包括sessionid)
+                mCookie = connection.getHeaderField("set-cookie");
                 // 返回字符串
                 final String resultStr = new String(baos.toByteArray());
                 //

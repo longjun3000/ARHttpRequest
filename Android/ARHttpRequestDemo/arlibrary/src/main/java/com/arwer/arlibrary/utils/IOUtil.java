@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Created by jun on 16/6/14.
  */
-public class IOUtils {
+public class IOUtil {
     /**
      * 获取本地文件或URL的文件名. 包含后缀
      *

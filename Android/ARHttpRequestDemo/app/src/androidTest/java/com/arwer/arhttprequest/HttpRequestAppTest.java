@@ -9,6 +9,8 @@ import com.arwer.arlibrary.net.common.IProgressCallback;
 import com.arwer.arlibrary.net.urlconnection.URLConnectionAdapter;
 import com.arwer.arlibrary.threads.TaskQueue;
 
+import org.json.JSONStringer;
+
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
@@ -34,12 +36,40 @@ public class HttpRequestAppTest extends ApplicationTestCase<Application> {
         return mHttpRequest;
     }
 
+    // 测试登陆
+    public void testLogin() {
+        try {
+            String urlString = "http://192.168.1.105:3000/login/userLogin";
+//            String jsonString = "{\"loginName\":\"admin\", \"loginPwd\":\"admin\"}";
+            String jsonString = new JSONStringer().object().key("loginName").value("admin").key("loginPwd").value("admin").endObject().toString();
+            getHttpRequest().postJson(urlString, 1, jsonString, null, 1000*30, new IHttpCallback() {
+                @Override
+                public void onFinished(String respString) {
+                    System.out.println(respString);
+
+//                  //
+                    testGet();
+                }
+
+                @Override
+                public void onFailure(String errMsg) {
+                    System.out.println(errMsg);
+                }
+            });
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // 测试GET
     public void testGet() {
         try {
 
-            String urlString = "http://www.baidu.com";
-            getHttpRequest().get(urlString, 0, 1000*15, new IHttpCallback() {
+//            String urlString = "http://www.baidu.com";
+            String urlString = "http://192.168.1.105:3000/mock/api/f40634f0-91e3-11e6-890d-21c998dc6fd3/getMethod";
+            getHttpRequest().get(urlString, 0, 1000*30, new IHttpCallback() {
                 @Override
                 public void onFinished(String respString) {
                     System.out.println(respString);

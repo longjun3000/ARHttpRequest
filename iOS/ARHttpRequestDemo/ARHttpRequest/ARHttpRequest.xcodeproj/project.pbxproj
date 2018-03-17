@@ -13,7 +13,7 @@
 		BF378F8A1D11471D00AA8DC3 /* ARHttpRequestASIAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF378F7B1D11471D00AA8DC3 /* ARHttpRequestASIAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF378F8E1D11471D00AA8DC3 /* IARHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BF378F801D11471D00AA8DC3 /* IARHttpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF378F8F1D11471D00AA8DC3 /* ARFormDataFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BF378F811D11471D00AA8DC3 /* ARFormDataFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF378F911D11471D00AA8DC3 /* ARHttpRequestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF378F831D11471D00AA8DC3 /* ARHttpRequestUtils.h */; };
+		BF378F911D11471D00AA8DC3 /* ARHttpRequestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF378F831D11471D00AA8DC3 /* ARHttpRequestUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF378F931D11471D00AA8DC3 /* ARHttpRequestSessionAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF378F861D11471D00AA8DC3 /* ARHttpRequestSessionAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF378F951D1148F900AA8DC3 /* ARHttpRequestASIAdapter.h in Sources */ = {isa = PBXBuildFile; fileRef = BF378F7B1D11471D00AA8DC3 /* ARHttpRequestASIAdapter.h */; };
 		BF378F961D1148F900AA8DC3 /* ARHttpRequestASIAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F7C1D11471D00AA8DC3 /* ARHttpRequestASIAdapter.m */; };
@@ -254,6 +254,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF378F911D11471D00AA8DC3 /* ARHttpRequestUtils.h in Headers */,
 				BF378FC71D114A7F00AA8DC3 /* ASINetworkQueue.h in Headers */,
 				BF378F8F1D11471D00AA8DC3 /* ARFormDataFile.h in Headers */,
 				BF378FC91D114A7F00AA8DC3 /* ASIProgressDelegate.h in Headers */,
@@ -268,7 +269,6 @@
 				BF378FB91D114A7F00AA8DC3 /* ASIDataCompressor.h in Headers */,
 				BF378FC41D114A7F00AA8DC3 /* ASIHTTPRequestDelegate.h in Headers */,
 				BF378FCB1D114A7F00AA8DC3 /* Reachability.h in Headers */,
-				BF378F911D11471D00AA8DC3 /* ARHttpRequestUtils.h in Headers */,
 				BF378FBD1D114A7F00AA8DC3 /* ASIDownloadCache.h in Headers */,
 				BF378F531D11457E00AA8DC3 /* ARHttpRequest.h in Headers */,
 				BF378FC11D114A7F00AA8DC3 /* ASIHTTPRequest.h in Headers */,
@@ -321,7 +321,7 @@
 		BF378F461D11457E00AA8DC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Arwer;
 				TargetAttributes = {
 					BF378F4E1D11457E00AA8DC3 = {
@@ -421,13 +421,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -468,13 +476,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -504,13 +520,14 @@
 		BF378F641D11457F00AA8DC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ARHttpRequest/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arwer.ARHttpRequest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -521,13 +538,14 @@
 		BF378F651D11457F00AA8DC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ARHttpRequest/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arwer.ARHttpRequest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

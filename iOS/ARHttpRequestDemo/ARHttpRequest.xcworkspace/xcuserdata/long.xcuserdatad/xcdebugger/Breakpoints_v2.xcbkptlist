@@ -9,14 +9,202 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ARHttpRequest/ARHttpRequest/NSUrlSession/ARHttpRequestSessionAdapter.m"
-            timestampString = "487953269.346412"
+            filePath = "ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+            timestampString = "542987135.10085"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "-get:params:tag:userInfo:attachHeadInfo:timeoutSeconds:finishedBlock:failedBlock:"
-            landmarkType = "5">
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-testGet"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+            timestampString = "542987135.101601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-testDownload"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+            timestampString = "542987135.1018929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "-testDownload"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke.121"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.584239"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke.121"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.586836"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "506">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke.121"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.5891449"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "615">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke.121"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.591416"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "724">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+            timestampString = "542987135.102163"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "-testDownload"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke_2"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.5939519"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke_2"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.597334"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "562">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke_2"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.6009279"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "687">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[ARHttpRequestTests testDownload]_block_invoke_2"
+                  moduleName = "ARHttpRequestDemoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/long/lj_Source/GitHub/ARHttpRequest/iOS/ARHttpRequestDemo/ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+                  timestampString = "542987135.603346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "796">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARHttpRequestDemo/ARHttpRequestDemoTests/ARHttpRequestTests.m"
+            timestampString = "542987135.1024311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-testDownload"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

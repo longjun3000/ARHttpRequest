@@ -326,16 +326,13 @@
              failedBlock:(ARNetFailedBlock _Nonnull)failedBlock
 {
     // 将参数拼接到url
-    NSMutableString *fullUrl = [ARHttpRequestUtils createGetUrlByDictParam:urlString paramDict:params];
-    // 编码url
-    NSString *encodedUrl = [fullUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *fullUrl = [ARHttpRequestUtils createGetUrlByDictParam:urlString paramDict:params];
     
-#if DEBUG
-    NSLog(@"get, encoded urlString=%@",encodedUrl);
-#endif
+    // 编码为URL允许的格式
+    NSString *encodeUrl = [fullUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     // 创建一个请求对象，以及设置请求参数
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:encodedUrl]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:encodeUrl]];
     request.HTTPMethod = @"GET";
     request.timeoutInterval = timeoutSeconds; //超时时间，秒
 
@@ -811,9 +808,11 @@
 //    }
 //    [config setHTTPAdditionalHeaders:attachHeadInfo];
     
+    // 编码为URL允许的格式
+    NSString *encodeUrl = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
     // 创建一个请求对象，以及设置请求参数
-    NSString *encodedUrl = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url=[NSURL URLWithString:encodedUrl];
+    NSURL *url=[NSURL URLWithString:encodeUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.timeoutInterval = timeoutSeconds; //超时时间，秒
     for (NSString *key in attachHeadInfo.allKeys) { //添加附加的头信息

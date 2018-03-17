@@ -313,20 +313,13 @@ finishedBlock:finishedBlock
            finishedBlock:(ARNetFinishedBlock _Nonnull)finishedBlock
              failedBlock:(ARNetFailedBlock _Nonnull)failedBlock
 {
-    // 将参数拼接到url
-    NSMutableString *fullUrl = [ARHttpRequestUtils createGetUrlByDictParam:urlString paramDict:params];
-    // 编码url
-    NSString *encodedUrl = [fullUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *fullUrl = [ARHttpRequestUtils createGetUrlByDictParam:urlString paramDict:params];
     
-//    NSString *encodedUrl = [fullUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; //ios9+弃用
-//    NSString *encodedUrl = [fullUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];//ASIHTTPRequest报错“Unable to start HTTP connection”
-    
-//#if DEBUG
-//    NSLog(@"get, encoded urlString=%@",encodedUrl);
-//#endif
-    
-    NSURL *url = [NSURL URLWithString:[ARHttpRequestUtils encodeUrlLastComponent:encodedUrl]];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    // 编码为URL允许的格式
+    NSString *encodeUrl = [fullUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
+    //
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:encodeUrl] ];
     [request setRequestMethod:@"GET"];
     [request setValidatesSecureCertificate:NO];
     [request setUserInfo:userInfo];
@@ -611,9 +604,6 @@ finishedBlock:finishedBlock
     }
 #endif
     
-//    NSString *utf8=[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSURL *url=[NSURL URLWithString:utf8];
-//    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     NSURL *url=[NSURL URLWithString:urlString];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     
@@ -835,20 +825,12 @@ finishedBlock:finishedBlock
     if (!progressBlock || !finishedBlock || !failedBlock) {
         return;
     }
-    
+    // 编码为URL允许的格式
+    NSString *encodeUrl = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
     NSString *urlFilename = [urlString lastPathComponent];
     // 2 创建ASIHTTPRequest请求对象
-    /*
-     备注：
-     比如urlString=http://localhost:3000/download/凯文·凯利：Out of Control.pdf
-     使用stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding编码后为：http://localhost:3000/download/%E5%87%AF%E6%96%87%C2%B7%E5%87%AF%E5%88%A9%EF%BC%9AOut%20of%20Control.pdf ，这个ASI可以正常访问，但是该API因为iOS9+已经用，官方API变为stringByAddingPercentEncodingWithAllowedCharacters，使用新API及其URLHostAllowedCharacterSet参数编码后为：http%3A%2F%2Flocalhost%3A3000%2Fdownload%2F%E5%87%AF%E6%96%87%C2%B7%E5%87%AF%E5%88%A9%EF%BC%9AOut%20of%20Control.pdf，调用ASIHTTPRequest则报错“Unable to start HTTP connection”。
-     所以折中解决方法是urlString只编码文件名部分。
-     */
-//    NSString *encodedUrl = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; //ios9+弃用
-//    NSString *encodedUrl = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-//    NSURL *url=[NSURL URLWithString:encodedUrl];
-    
-    NSURL *url = [NSURL URLWithString:[ARHttpRequestUtils encodeUrlLastComponent:urlString]];
+    NSURL *url = [NSURL URLWithString:encodeUrl];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     
     // 3 设置参数

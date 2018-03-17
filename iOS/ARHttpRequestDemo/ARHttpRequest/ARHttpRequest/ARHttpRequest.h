@@ -20,3 +20,4 @@ FOUNDATION_EXPORT const unsigned char ARHttpRequestVersionString[];
 #import <ARHttpRequest/ARHttpRequestASIAdapter.h>
 #import <ARHttpRequest/ARHttpRequestSessionAdapter.h>
 #import <ARHttpRequest/ARFormDataFile.h>
+#import <ARHttpRequest/ARHttpRequestUtils.h>

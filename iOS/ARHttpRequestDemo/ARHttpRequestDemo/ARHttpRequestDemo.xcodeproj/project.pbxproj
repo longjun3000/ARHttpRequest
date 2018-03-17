@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF19076B1D1D15A700622BA5 /* ARHttpRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */; };
-		BF19076D1D1D15CE00622BA5 /* ARHttpRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF378F141D1144BF00AA8DC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F131D1144BF00AA8DC3 /* main.m */; };
 		BF378F171D1144BF00AA8DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F161D1144BF00AA8DC3 /* AppDelegate.m */; };
 		BF378F1A1D1144BF00AA8DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F191D1144BF00AA8DC3 /* ViewController.m */; };
@@ -18,6 +16,7 @@
 		BF378F2D1D1144C000AA8DC3 /* ARHttpRequestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F2C1D1144C000AA8DC3 /* ARHttpRequestDemoTests.m */; };
 		BF378F381D1144C000AA8DC3 /* ARHttpRequestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF378F371D1144C000AA8DC3 /* ARHttpRequestDemoUITests.m */; };
 		BF4BDB4E1D1283FB0094F305 /* ARHttpRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4BDB4D1D1283FB0094F305 /* ARHttpRequestTests.m */; };
+		FD0D03101DD17C4400CA9BC4 /* ARHttpRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0D030D1DD17C1100CA9BC4 /* ARHttpRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +34,20 @@
 			remoteGlobalIDString = BF378F0E1D1144BF00AA8DC3;
 			remoteInfo = ARHttpRequestDemo;
 		};
+		FDEC5371205D481A00036E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDEC536C205D481A00036E52 /* ARHttpRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF378F4F1D11457E00AA8DC3;
+			remoteInfo = ARHttpRequest;
+		};
+		FDEC5373205D481A00036E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDEC536C205D481A00036E52 /* ARHttpRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF378F591D11457E00AA8DC3;
+			remoteInfo = ARHttpRequestTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,14 +57,22 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF19076D1D1D15CE00622BA5 /* ARHttpRequest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD0D030F1DD17C1800CA9BC4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD0D03101DD17C4400CA9BC4 /* ARHttpRequest.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARHttpRequest.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ARHttpRequest-dvvdbrgwlfjumqcfdojwpbzctsgf/Build/Products/Debug-iphoneos/ARHttpRequest.framework"; sourceTree = "<group>"; };
 		BF378F0F1D1144BF00AA8DC3 /* ARHttpRequestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARHttpRequestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF378F131D1144BF00AA8DC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF378F151D1144BF00AA8DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +90,8 @@
 		BF378F371D1144C000AA8DC3 /* ARHttpRequestDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARHttpRequestDemoUITests.m; sourceTree = "<group>"; };
 		BF378F391D1144C000AA8DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4BDB4D1D1283FB0094F305 /* ARHttpRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARHttpRequestTests.m; sourceTree = "<group>"; };
+		FD0D030D1DD17C1100CA9BC4 /* ARHttpRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARHttpRequest.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ARHttpRequest-faxykfhxypkaoxdracsyccsdzbmh/Build/Products/Debug-iphonesimulator/ARHttpRequest.framework"; sourceTree = "<group>"; };
+		FDEC536C205D481A00036E52 /* ARHttpRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ARHttpRequest.xcodeproj; path = ../ARHttpRequest/ARHttpRequest.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF19076B1D1D15A700622BA5 /* ARHttpRequest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,9 +186,19 @@
 		BF4BDB511D12AA020094F305 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF19076A1D1D15A700622BA5 /* ARHttpRequest.framework */,
+				FDEC536C205D481A00036E52 /* ARHttpRequest.xcodeproj */,
+				FD0D030D1DD17C1100CA9BC4 /* ARHttpRequest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDEC536D205D481A00036E52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDEC5372205D481A00036E52 /* ARHttpRequest.framework */,
+				FDEC5374205D481A00036E52 /* ARHttpRequestTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +229,7 @@
 				BF378F241D1144BF00AA8DC3 /* Sources */,
 				BF378F251D1144BF00AA8DC3 /* Frameworks */,
 				BF378F261D1144BF00AA8DC3 /* Resources */,
+				FD0D030F1DD17C1800CA9BC4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -232,7 +265,7 @@
 		BF378F071D1144BF00AA8DC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Arwer;
 				TargetAttributes = {
 					BF378F0E1D1144BF00AA8DC3 = {
@@ -260,6 +293,12 @@
 			mainGroup = BF378F061D1144BF00AA8DC3;
 			productRefGroup = BF378F101D1144BF00AA8DC3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FDEC536D205D481A00036E52 /* Products */;
+					ProjectRef = FDEC536C205D481A00036E52 /* ARHttpRequest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BF378F0E1D1144BF00AA8DC3 /* ARHttpRequestDemo */,
@@ -268,6 +307,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FDEC5372205D481A00036E52 /* ARHttpRequest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ARHttpRequest.framework;
+			remoteRef = FDEC5371205D481A00036E52 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FDEC5374205D481A00036E52 /* ARHttpRequestTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ARHttpRequestTests.xctest;
+			remoteRef = FDEC5373205D481A00036E52 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF378F0D1D1144BF00AA8DC3 /* Resources */ = {
@@ -367,13 +423,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -411,13 +475,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -448,7 +520,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ARHttpRequestDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arwer.ARHttpRequestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,7 +535,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ARHttpRequestDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arwer.ARHttpRequestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

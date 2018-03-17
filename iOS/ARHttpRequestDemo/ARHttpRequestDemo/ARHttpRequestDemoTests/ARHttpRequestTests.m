@@ -11,6 +11,7 @@
 #import <ARHttpRequest/ARHttpRequestASIAdapter.h>
 #import <ARHttpRequest/ARHttpRequestSessionAdapter.h>
 #import <ARHttpRequest/ARFormDataFile.h>
+#import <ARHttpRequest/ARHttpRequestUtils.h>
 
 @interface ARHttpRequestTests : XCTestCase
 
@@ -48,11 +49,11 @@
 - (id<IARHttpRequest>)httpRequest
 {
     if (!_httpRequest) {
-        // 创建基于NSURLSession的适配器
-        _httpRequest = [[ARHttpRequestSessionAdapter alloc] init];
+//        // 创建基于NSURLSession的适配器
+//        _httpRequest = [[ARHttpRequestSessionAdapter alloc] init];
         
-//        // 创建基于ASIHTTPRequest的适配器
-//        _httpRequest = [[ARHttpRequestASIAdapter alloc] init];
+        // 创建基于ASIHTTPRequest的适配器
+        _httpRequest = [[ARHttpRequestASIAdapter alloc] init];
     }
     return _httpRequest;
 }
@@ -64,10 +65,10 @@
     
     XCTestExpectation *exception = [self expectationWithDescription:@""];
     
-    //    NSString *url = @"http://localhost:3000/dev/mock/api/48e82320-efff-11e5-b524-8fc3522b1799/checkVersion";
-//        NSString *url = @"http://www.baidu.com";
-//    NSString *url = @"http://localhost:3000/dev/mock/api/48e82320-efff-11e5-b524-8fc3522b1799/checkVersionFail";
+//    NSString *url = @"http://www.baidu.com";
+//    NSString *url = @"http://192.168.1.103:3000/mock/api/f40634f0-91e3-11e6-890d-21c998dc6fd3/getMethod";
     NSString *url = @"http://www.baidu.com/s?wd=学习 笔记";
+    NSLog(@">>> url=%@", url);
     
     [self.httpRequest get:url
                       tag:0
@@ -94,7 +95,7 @@
     }];
 }
 
-// 测试POST请求
+// 测试POST请求。Post JSON 字符串。
 - (void)testPost {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -131,7 +132,7 @@
     }];
 }
 
-// 测试POST请求
+// 测试POST请求。Post JSON 字典。
 - (void)testPost2 {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -184,6 +185,7 @@
     NSString *url = @"http://localhost:3000/download/Tanenbaum：Modern Operating Systems (第2版 扫描版).pdf"; //23.6M
     //    NSString *url = @"http://localhost:3000/download/eeee.java"; //2K
     //    NSString *url = @"http://localhost:3000/download/Steven Levy：黑客——计算机革命的英雄 (25周年纪念版).mobi";//1.1M
+    NSLog(@">>> url=%@", url);
     
     NSInteger tag = 10;
     [self.httpRequest downloadFile:url
@@ -334,6 +336,42 @@
     
     //测试挂起等待上面队列完成Block执行完成或超时
     [self waitForExpectationsWithTimeout:120 handler:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@">>> Timeout Error: %@", error);
+        }
+    }];
+}
+
+
+// 测试登陆后的接口调用
+- (void)testLoginAndGet {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    XCTestExpectation *exception = [self expectationWithDescription:@""];
+    
+    NSString *url = @"http://127.0.0.1:3000/login/userLogin";
+    
+    [self.httpRequest postJson:url
+                           tag:0
+                    jsonString:@"{\"loginName\":\"admin\", \"loginPwd\":\"admin\"}"
+                 finishedBlock:^(NSData *data, NSDictionary *userInfo) {
+                     //
+                     NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                     NSLog(@">>> testPost finished, data: %@", dataStr);
+                     XCTAssert(YES, @"Pass");
+                     [exception fulfill];
+                 }
+                   failedBlock:^(NSError *error, NSDictionary *userInfo) {
+                       //
+                       NSLog(@">>> testPost error: %@", error);
+                       XCTAssert(NO, @"Not pass");
+                       [exception fulfill];
+                   }
+     ];
+    
+    //测试挂起等待上面Block执行完成或超时
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
         if (error) {
             NSLog(@">>> Timeout Error: %@", error);
         }
